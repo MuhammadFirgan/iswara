@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { BiCheck } from "react-icons/bi";
+import { BiHeadphone } from "react-icons/bi";
 
 
 export default function page({ params }: { params: { id: string } }) {
@@ -33,15 +33,15 @@ export default function page({ params }: { params: { id: string } }) {
 
       <div className="px-10 flex flex-col gap-7 pt-10 lg:pb-10">
         <p className="text-sm ">Suatu hari, Kancil ingin menyeberangi sungai penuh buaya. Dengan cerdiknya, ia berpura-pura membawa pesan dari Raja Hutan yang ingin menghitung jumlah buaya. Buaya-buaya diminta berbaris membentuk jembatan, dan Kancil melompati mereka sambil berpura-pura menghitung. Setelah sampai di seberang, Kancil tertawa dan mengatakan bahwa ia hanya ingin menyeberang, bukan menghitung. Buaya pun merasa tertipu, tetapi Kancil sudah aman di seberang.</p>
-        <div className="w-full px-5 py-3 bg-zinc-800 rounded-xl flex items-center gap-10">
+        <div className="w-full px-5 py-3 bg-zinc-800 rounded-xl flex items-center gap-10 lg:max-w-md">
           <Image src="/vertical.jpg" width={50} height={50} alt="profile" className="aspect-square rounded-lg" />
           <div>
             <Link href="/profile">      
               <h2 className="text-xl">Muhammad Firgan</h2>
             </Link>
             <div className="flex items-center gap-2">
-              <BiCheck className="bg-primary rounded-full" />
-              <span className="text-sm text-zinc-600">Verified</span>
+              <BiHeadphone className="text-zinc-600" />
+              <span className="text-sm text-zinc-600">100 Audios</span>
             </div>
           </div>
         </div>
