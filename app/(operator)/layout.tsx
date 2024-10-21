@@ -17,7 +17,7 @@ export default function layout({
         </div>
         <section className='flex min-h-screen max-md:pb-14 flex-col relative z-500 w-full'>
           <div className="flex w-full justify-between items-center gap-3 px-8 py-6">
-            <Search />
+            {/* <Search /> */}
             {/* <div >
             </div> */}
 
@@ -25,7 +25,7 @@ export default function layout({
               <div className="md:hidden">
                 <MobileNav />
               </div>
-              <Topbar />
+              {/* <Topbar /> */}
             </div>
           </div>
 

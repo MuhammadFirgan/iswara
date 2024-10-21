@@ -3,7 +3,9 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Sidebar";
 import Footer from "@/components/shared/Footer";
-
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
 
 const poppins = Poppins({
   weight: ['400', '600'],
@@ -23,13 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${poppins.className} antialiased bg-zinc-950 text-white relative`}
-      >
-      {children}
-        
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${poppins.className} antialiased bg-zinc-950 text-white relative`}
+        >
+        {children}
+          
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

@@ -13,7 +13,7 @@ export default function Sidebar() {
   return (
     <>
     
-      <aside className="sticky left-0 top-0 bottom-0 min-h-screen p-6 w-[250px] bg-zinc-900">
+      <aside className="sticky left-0 top-0 bottom-0 min-h-screen p-6 w-[250px] bg-neutral-950 border-r-2 border-zinc-800">
         <div className="flex-col flex-between gap-5 hidden lg:flex">
           
           <div className="flex flex-col py-10 gap-10">
