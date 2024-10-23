@@ -1,6 +1,5 @@
 import {
     FormControl,
-    FormDescription,
     FormLabel,
     FormMessage,
   } from "@/components/ui/form"
@@ -25,6 +24,16 @@ export default function RenderField({ field, props }: { field: any, props: Custo
                     <FormLabel>{props.label}</FormLabel>
                     <FormControl>
                         <Input placeholder={props.placeholder} {...field} className="shad-input bg-zinc-900 border-none" />
+                    </FormControl>
+                    <FormMessage />
+                </>
+            )
+        case FieldType.PASSWORD:
+            return (
+                <>
+                    <FormLabel>{props.label}</FormLabel>
+                    <FormControl>
+                        <Input placeholder={props.placeholder} {...field} className="shad-input bg-zinc-900 border-none" type="password"/>
                     </FormControl>
                     <FormMessage />
                 </>

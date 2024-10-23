@@ -21,7 +21,7 @@ export default function Sidebar() {
             <BiHome className='w-6 h-6' />
             <p className="text-lg">Beranda</p>
             </Link>
-            <Link href="/create" className="flex items-center gap-3">
+            <Link href="/audio/create" className="flex items-center gap-3">
             <BiSolidMegaphone className='w-6 h-6' />
             <p className="text-lg">Buat Audio</p>
             </Link>

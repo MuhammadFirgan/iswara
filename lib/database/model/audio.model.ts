@@ -9,7 +9,7 @@ export interface IAudio extends Document {
     prompt: string
     imgUrl?: string
     podcaster: { _id: string, firstName: string, lastName: string, photo: string },
-    role: { _id: string, name: string }
+    
 }
 
 const AudioSchmea = new Schema({
@@ -20,6 +20,6 @@ const AudioSchmea = new Schema({
     prompt: { type: String, require: true },
     imgUrl: { type: String },
     podcaster: { _id: Schema.Types.ObjectId, ref: "User" },
-    role: { _id: Schema.Types.ObjectId, ref: "Role", default: 'Guru' }
+    
 
 })

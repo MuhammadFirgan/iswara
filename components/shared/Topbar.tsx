@@ -10,7 +10,7 @@ export default function Topbar() {
       </SignedIn>
       <SignedOut>
         <Button asChild className="rounded-full bg-primary">
-          <Link href="/sign-up">Masuk</Link>
+          <Link href="/sign-in">Masuk</Link>
         </Button>
       </SignedOut>
     </div>

@@ -10,7 +10,8 @@ export enum FieldType {
     INPUT = 'input',
     SELECT = 'select',
     FILE = 'file',
-    TEXTAREA = 'textarea'
+    TEXTAREA = 'textarea',
+    PASSWORD = 'password'
 }
 
 export interface CustomFormProps {
@@ -21,6 +22,7 @@ export interface CustomFormProps {
     placeholder?: string
     children?: React.ReactNode
 }
+
 
 export default function CustomForm(props: CustomFormProps) {
     const { name, control } = props
