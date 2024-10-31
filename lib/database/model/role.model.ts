@@ -1,8 +1,15 @@
-import { model, models, Schema } from "mongoose";
+import { Document, model, models, Schema } from "mongoose";
+
+export interface IRole extends Document {
+    _id: string
+    name: string
+}
 
 const RoleSchema = new Schema({
-    _id: { type: String, require: true, unique: true },
-    name: { type: String, require: true },
+    name: { type: String, required: true },
 })
 
 const Role = models.role || model('role', RoleSchema)
+
+
+export default Role

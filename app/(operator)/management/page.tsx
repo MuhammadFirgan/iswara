@@ -1,4 +1,4 @@
-import CreateUserForm from "@/components/shared/CreateUserForm"
+import CreateUserForm from "@/components/shared/CreateUser"
 import { Badge } from "@/components/ui/badge"
 import {
     Table,

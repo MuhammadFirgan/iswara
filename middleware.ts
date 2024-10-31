@@ -2,7 +2,7 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 
-// const isProtectedRoute = createRouteMatcher(['/create', ])
+// const isProtectedRoute = createRouteMatcher(['/audio(.*)'])
 // const isAdminRoute = createRouteMatcher(['/management(.*)'])
 
 export default clerkMiddleware((auth, req) => {
@@ -15,7 +15,7 @@ export default clerkMiddleware((auth, req) => {
   // }
 
   // if (isAdminRoute(req) && auth().sessionClaims?.metadata?.role !== 'admin') {
-  //   const url = new URL('/', req.url)
+  //   const url = new URL('/sign-in', req.url)
   //   return NextResponse.redirect(url)
   // }
 })

@@ -1,11 +1,12 @@
 import { Control } from "react-hook-form"
 
 export interface UserProps {
+  
   firstName: string
   email: string
   username: string
   role: string
-  password: string
+  photo?: string
 }
 
 export interface CardProps {
@@ -15,15 +16,16 @@ export interface CardProps {
     name: string
 }
 
+
 export {}
 
 // Create a type for the roles
-export type Roles = 'admin' | 'moderator'
+export type Role = 'admin' | 'member'
 
 declare global {
   interface CustomJwtSessionClaims {
     metadata: {
-      role?: Roles
+      role?: Role
     }
   }
 }

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import {
     Dialog,
     DialogContent,
@@ -20,10 +20,19 @@ import {
 } from "@/components/ui/form"
 import CustomForm, { FieldType } from "@/components/shared/CustomForm"
 import { SelectItem } from "@/components/ui/select"
+import createUser from "@/lib/action/user.action"
+import { useRouter } from "next/navigation"
+import { IUser } from "@/lib/database/model/user.model"
 
 
+type UserFormProps =  {
+    roles: object
+   
+}
 
-export default function CreateUserForm() {
+export default function AddUserForm({ roles }: UserFormProps) {
+
+    const router = useRouter()
 
     const form = useForm<z.infer<typeof userFormValidation>>({
         resolver: zodResolver(userFormValidation),
@@ -35,14 +44,21 @@ export default function CreateUserForm() {
         },
     })
     
-    function onSubmit(values: z.infer<typeof userFormValidation>) {
-        
-        
-      }
-
+    async function onSubmit(values: z.infer<typeof userFormValidation>) {
+     
+        try {
+            const newUser = await createUser({...values })
+            if (newUser) {
+                form.reset()
+                router.push('/management')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+  
+    }
   return (
-    <div className="flex justify-end mb-10">
-      <Dialog >
+    <Dialog >
         <DialogTrigger className="bg-primary px-6 py-2 rounded-xl">Tambah User</DialogTrigger>
         <DialogContent className="bg-zinc-950">
             <DialogHeader>
@@ -78,7 +94,11 @@ export default function CreateUserForm() {
                             label="Status"
                             placeholder="Pilih status"
                         >
-                            <SelectItem value="light" className="bg-zinc-900 border-none text-white">Light</SelectItem>
+                            {roles?.map((role: string) => (
+
+                                <SelectItem key={role?._id} value={role?._id} className="bg-zinc-900 border-none text-white">{role.name === 'admin' ? 'Operator' : 'Guru'}</SelectItem>
+                            ))}
+                        
                         </CustomForm>
                         <CustomForm 
                             control={form.control}
@@ -94,7 +114,5 @@ export default function CreateUserForm() {
             </DialogHeader>
         </DialogContent>
     </Dialog>
-
-    </div>
   )
 }

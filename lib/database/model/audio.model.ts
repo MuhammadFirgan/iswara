@@ -13,7 +13,6 @@ export interface IAudio extends Document {
 }
 
 const AudioSchmea = new Schema({
-    _id: { type: String, require: true, unique: true },
     title: { type: String, required: true },
     description: { type: String },
     voiceType: { type: String, require: true },

@@ -1,12 +1,22 @@
-import { model, models, Schema } from "mongoose";
+import { Document, model, models, Schema } from "mongoose";
+
+
+export interface IUser extends Document {
+    fullName: string
+    email: string
+    nip: string
+    photo: string
+    role: { _id: string, name: string }
+}
+
 
 const UserSchema = new Schema({
     clerkId: { type: String, require: true, unique: true },
-    fullName: { type: String, require: true },
+    firstName: { type: String, require: true },
     email: { type: String, require: true, unique: true },
-    nip: { type: String, require: true, unique: true },
-    photo: { type: String, require: true },
-    role: { _id: Schema.Types.ObjectId, ref: "Role", default: 'Siswa' }
+    username: { type: String, require: true, unique: true },
+    photo: { type: String },
+    role: { type: Schema.ObjectId, ref: "role" }
 })
 
 const User = models.user || model('user', UserSchema)
